@@ -1,13 +1,16 @@
 <?php
-$count = 1;
 
-if($count == 1) {
-    echo "На улице холодно я надену куртку";
-} else if ($count == 2) {
-    echo "На улице тепло я надену Футболку";
-} else if ($count == 3) {
-    echo "На улице дождь я надену дождевик";
-}
-else {
-    echo "На улице ничего, выйду на улицу голым";
-}
+$college = array(
+    "Студенты" => array("fff", "ggg"),
+    "Преподователи" => array("fffh", "gggh"));
+
+    foreach($college as $people => $items) {
+        echo "<h1>$people</h1>";
+        echo "<ul>";
+            foreach($items as $item => $value) {
+                echo "<li>$value</li>";
+            }
+        echo "</ul>";
+    }
+    
+
