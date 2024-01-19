@@ -2,6 +2,73 @@
     padding: 0;
     margin: 0;
 }
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
 body {
-    background-color: brown;
+    background-color: black;
+    color: white;
+}
+
+.container {
+    max-width: 1240px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    border-bottom:1px white solid;
+}
+
+.header-inner {
+
+}
+
+.header-inner__link {
+    font-size: 28px;
+}
+
+.hero__inner {
+    display: flex;
+    justify-content: center;
+}
+
+.hero__section {
+    padding-top: 100px;
+}
+
+.hero__item-text-section-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero__amg {
+    padding-bottom: 15px;
+}
+
+.hero__title {
+    font-size: 42px;
+}
+
+.painting__inner {
+    padding-top: 50px;
+    display: flex;
+    gap: 15px;
+}
+
+.painting__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
