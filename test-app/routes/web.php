@@ -12,16 +12,20 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 // Открытие главной страницы
 //Route::get('/', function () {
 //    return view('welcome');
 //});
 // Открытие страницы о нас
 //Route::get('/about', function () {
-//   return view('about');
+//    return view('about');
 //});
+
 Route::get('/', [\App\Http\Controllers\FrontendController::class, 'index'])->name('home');
 Route::get('/about', [\App\Http\Controllers\FrontendController::class, 'about'])->name('about');
-Route::get('/portfolio', [\App\Http\Controllers\FrontendController::class, 'portfolio'])->name('portfolio');
-Route::get('/price', [\App\Http\Controllers\FrontendController::class, 'price'])->name('price');
-Route::get('/contact', [\App\Http\Controllers\FrontendController::class, 'contact'])->name('contact');
+
+Route::prefix('/post')->group(function () {
+    Route::get('/index', [\App\Http\Controllers\PostController::class, 'index'])->name('post.index');
+    Route::get('/create', [\App\Http\Controllers\PostController::class, 'create'])->name('post.create');
+});
