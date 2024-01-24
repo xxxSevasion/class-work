@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="container">
+        @if($message = Session::get('success'))
+            <div class="alert alert-success">
+                {{ $message }}
+            </div>
+        @endif
         <div class="row">
             <a href="{{ route('post.create') }}" class="btn btn-primary">{{ __('Новый пост') }}</a>
         </div>
