@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <a href="{{ route('category.create') }}" class="btn btn-primary">Новая категория</a>
+            <a href="{{ route('tovar.create') }}" class="btn btn-primary">Новый товар</a>
         </div>
         <div class="row">
             @if($message = Session::get('success'))
@@ -15,26 +15,30 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Название товара</th>
+                    <th scope="col">Описание товара</th>
                     <th scope="col">Название категории</th>
-                    <th scope="col">Описание категории</th>
                     <th scope="col">Статус</th>
                     <th scope="col">Действие</th>
                 </tr>
                 </thead>
                 <tbody>
-                @forelse($categories as $category)
+                @forelse($products as $product)
                     <tr>
                         <th scope="row">
-                            {{ $category->id }}
+                            {{ $product->id }}
                         </th>
                         <td>
-                            {{ $category->name }}
+                            {{ $product->name }}
                         </td>
                         <td>
-                            {{ $category->text }}
+                            {{ $product->text }}
                         </td>
                         <td>
-                            @if ($category->is_active == 0)
+                            {{ $product->category->name }}
+                        </td>
+                        <td>
+                            @if ($product->is_active == 0)
                                 <div class="alert alert-danger text-center">
                                     {{ __('Не активна') }}
                                 </div>
@@ -45,8 +49,8 @@
                             @endif
                         </td>
                         <td>
-                            <a href="{{ route('category.edit', $category->id) }}" class="btn btn-success">Редактировать</a>
-                            <form method="POST" action="{{ route('category.delete', $category->id) }}">
+                            <a href="{{ route('tovar.edit', $product->id) }}" class="btn btn-success">Редактировать</a>
+                            <form method="POST" action="{{ route('tovar.delete', $product->id) }}">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Удалить</button>

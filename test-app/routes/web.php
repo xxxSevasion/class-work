@@ -37,4 +37,15 @@ Route::prefix('/category')->group(function () {
     Route::get('/index', [\App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('category.index');
     Route::get('/create', [\App\Http\Controllers\Admin\CategoryController::class, 'create'])->name('category.create');
     Route::post('/store', [\App\Http\Controllers\Admin\CategoryController::class, 'store'])->name('category.store');
+    Route::get('/edit/{category}', [\App\Http\Controllers\Admin\CategoryController::class, 'edit'])->name('category.edit');
+    Route::delete('/delete/{category}', [\App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('category.delete');
+    Route::put('/update/{category}', [\App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('category.update');
+});
+Route::prefix('/tovar')->group(function () {
+   Route::get('/index', [\App\Http\Controllers\Admin\ProductController::class, 'index'])->name('tovar.index');
+    Route::get('/create', [\App\Http\Controllers\Admin\ProductController::class, 'create'])->name('tovar.create');
+    Route::post('/store', [\App\Http\Controllers\Admin\ProductController::class, 'store'])->name('tovar.store');
+    Route::get('/edit/{product}', [\App\Http\Controllers\Admin\ProductController::class, 'edit'])->name('tovar.edit');
+    Route::delete('/delete/{product}', [\App\Http\Controllers\Admin\ProductController::class, 'destroy'])->name('tovar.delete');
+    Route::put('/update/{product}', [\App\Http\Controllers\Admin\ProductController::class, 'update'])->name('tovar.update');
 });

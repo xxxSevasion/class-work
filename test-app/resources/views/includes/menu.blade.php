@@ -11,4 +11,7 @@
     <li>
         <a href="{{ route('category.index') }}">{{ __('Все категории') }}</a>
     </li>
+    <li>
+        <a href="{{ route('tovar.index') }}">{{ __('Все товары') }}</a>
+    </li>
 </ul>
