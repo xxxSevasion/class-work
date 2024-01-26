@@ -11,8 +11,8 @@ class Category extends Model
 
     protected $table = 'categories';
     protected $fillable = [
-        'name',
-        'text',
-        'is_active'
+      'name',
+      'text',
+      'is_active'
     ];
 }

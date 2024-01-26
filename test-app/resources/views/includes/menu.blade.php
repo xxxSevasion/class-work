@@ -8,4 +8,7 @@
     <li>
         <a href="{{ route('post.index') }}">{{ __('Все записи') }}</a>
     </li>
+    <li>
+        <a href="{{ route('category.index') }}">{{ __('Все категории') }}</a>
+    </li>
 </ul>
